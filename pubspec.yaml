@@ -91,3 +91,9 @@ flutter:
     - family: Poppins
       fonts:
         - asset: Assets/Fonts/Poppins-Regular.ttf
+    - family: Bebas
+      fonts:
+        - asset: Assets/Fonts/BebasNeue-Bold.ttf
+    - family: BebasReqular
+      fonts:
+        - asset: Assets/Fonts/BebasNeue-Regular.ttf

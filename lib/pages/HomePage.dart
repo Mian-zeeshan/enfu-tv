@@ -52,127 +52,30 @@ class _HomePageState extends State<HomePage> {
         builder: (theme) {
           return Scaffold(
               backgroundColor: theme.whiteColor,
-              body: Container(
+              body: SizedBox(
                 height: Get.height,
                 child: Column(
                   children: [
                     Container(
-                      height: 60.h,
-                      decoration:
-                          BoxDecoration(color: theme.whiteColor, boxShadow: [
-                        BoxShadow(
-                            color: theme.textColor.withOpacity(0.3),
-                            spreadRadius: 1.0,
-                            blurRadius: 20.0)
-                      ]),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          Image.asset(
-                            "Assets/Images/enfu-2.png",
-                            height: 40.h,
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Text(
-                            "Make the future bright with",
-                            style: fontUtils.label(theme.textColor),
-                          ),
-                          Text(
-                            " Lithium Batteries",
-                            style: fontUtils.label(theme.secondaryColor),
-                          ),
-                          Spacer(),
-                          IntrinsicHeight(
-                            child: Container(
-                              // color: theme.primaryColor,
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 20.h,
-                                    backgroundColor:
-                                        theme.secondaryColor.withOpacity(0.09),
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.location_on_outlined,
-                                        color: theme.secondaryColor,
-                                        size: 20.h,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 2.w,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "73-Karim Block,",
-                                        style:
-                                            fontUtils.label(theme.primaryColor),
-                                      ),
-                                      Text(
-                                        "Allama Iqbal Town, Lahore, Pakistan",
-                                        style:
-                                            fontUtils.label(theme.primaryColor),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                        height: 60.h,
+                        decoration:
+                            BoxDecoration(color: theme.whiteColor, boxShadow: [
+                          BoxShadow(
+                              color: theme.textColor.withOpacity(0.3),
+                              spreadRadius: 1.0,
+                              blurRadius: 20.0)
+                        ]),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 5.w,
                             ),
-                          ),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          IntrinsicHeight(
-                            child: Container(
-                              // color: theme.primaryColor,
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 20.h,
-                                    backgroundColor:
-                                        theme.secondaryColor.withOpacity(0.09),
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.phone_outlined,
-                                        color: theme.secondaryColor,
-                                        size: 20.h,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 2.w,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "+924235415252",
-                                        style:
-                                            fontUtils.label(theme.primaryColor),
-                                      ),
-                                      Text(
-                                        "+924235415252",
-                                        style:
-                                            fontUtils.label(theme.primaryColor),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10.w,
-                          )
-                        ],
-                      ),
-                    ),
+                            Image.asset(
+                              "Assets/Images/connecthrms.png",
+                              height: 30.h,
+                            )
+                          ],
+                        )),
                     Expanded(
                       child: IntrinsicHeight(
                         child: Row(
@@ -184,26 +87,27 @@ class _HomePageState extends State<HomePage> {
                               height: 600.h,
                               child: CarouselSlider(
                                   options: CarouselOptions(
-                                      onPageChanged: (index, reason) {
-                                        print(index);
-                                      },
+                                      onPageChanged: (index, reason) {},
                                       aspectRatio: 16 / 9,
                                       enableInfiniteScroll: false,
                                       viewportFraction: 0.96,
                                       autoPlay: true,
                                       enlargeCenterPage: true,
-                                      autoPlayInterval: Duration(seconds: 5),
+                                      autoPlayInterval:
+                                          const Duration(seconds: 4),
                                       enlargeStrategy:
                                           CenterPageEnlargeStrategy.scale),
                                   items: [
-                                  //ceo page here 
                                     Container(
                                       width: Get.width,
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
-
-                                      // clipBehavior: Clip.antiAliasWithSaveLayer,
                                       margin: EdgeInsets.all(20.h),
                                       decoration: BoxDecoration(
+                                          image: const DecorationImage(
+                                              fit: BoxFit.cover,
+                                              image: AssetImage(
+                                                "Assets/Images/back.jpg",
+                                              )),
                                           borderRadius:
                                               BorderRadius.circular(8.r),
                                           color: theme.whiteColor,
@@ -214,56 +118,177 @@ class _HomePageState extends State<HomePage> {
                                                 spreadRadius: 1.0,
                                                 blurRadius: 20.0)
                                           ]),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                                child: Image.asset(
-                                              "Assets/Images/ceo.png",
-                                              height: 250.h,
-                                            )),
-                                            SizedBox(
-                                              height: 10.h,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                      child: Stack(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Expanded(child: Container()),
+                                              SizedBox(
+                                                width: 30.w,
+                                              ),
+                                              Expanded(
+                                                flex: 2,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+                                                    // Text(
+                                                    //   "",
+                                                    //   style: TextStyle(
+                                                    //       color: theme
+                                                    //           .primaryColor,
+                                                    //       fontSize: 50,
+                                                    //       fontFamily: "Bebas",
+                                                    //       height: 1.h,
+                                                    //       fontWeight:
+                                                    //           FontWeight.bold),
+                                                    // ),
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+                                                    Text(
+                                                      "HAPPY WORK",
+                                                      style: TextStyle(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontSize: 50,
+                                                          height: 1.h,
+                                                          fontFamily: "Bebas",
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 5.h,
+                                                    ),
+                                                    Text(
+                                                      "ANNIVERSARY",
+                                                      style: TextStyle(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontSize: 50,
+                                                          height: 1.h,
+                                                          fontFamily: "Bebas",
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+
+                                                    IntrinsicWidth(
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "John Willam Son",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  "BebasReqular",
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontSize: 20,
+                                                              height: 1.h,
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 2.h,
+                                                          ),
+                                                          Container(
+                                                            height: 1.h,
+                                                            color: theme
+                                                                .primaryColor,
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+
+                                                    Text(
+                                                      "Marketing Lead",
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              "BebasReqular",
+                                                          color: theme.textColor
+                                                              .withOpacity(0.3),
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+
+                                                    SizedBox(
+                                                      height: 50.h,
+                                                    ),
+
+                                                    Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          width: 30.w,
+                                                        ),
+                                                        Expanded(
+                                                          child: Text(
+                                                            "John Willam Son has been with us for 5 fantastic years. Thank you for your dedication and hard work",
+                                                            style: TextStyle(
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontSize: 20,
+                                                              fontFamily:
+                                                                  "BebasReqular",
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                    // Column(
+                                                    //   children: [
+
+                                                    //   ],
+                                                    // ),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 10.w,
+                                              )
+                                            ],
+                                          ),
+                                          Positioned(
+                                            bottom: -50,
+                                            left: -50,
+                                            child: Container(
+                                              height: 330.h,
+                                              width: 330.h,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: theme.primaryColor,
+                                              ),
                                               child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(
-                                                    "CEO Message",
-                                                    style: fontUtils
-                                                        .label(theme.textColor),
-                                                  ),
-                                                  Text(
-                                                    "Welcome to Enfu Technology",
-                                                    style: fontUtils
-                                                        .h6(Color(0xff090029)),
-                                                  ),
-                                                  Text(
-"As CEO, I am thrilled to lead a talented team of innovators, engineers, and industry experts who share a common goal to electrify a sustainable future.\nAt Enfu Technology, we are passionate about harnessing the power of lithium batteries to transform the way we live, work, and interact with our planet.We are driven by a relentless pursuit of innovation, a commitment to excellence, and a dedication to making a positive impact on the environment and society."
-                                                  ,  style: fontUtils.label(theme
-                                                        .textColor
-                                                        .withOpacity(0.5)),
-                                                  )
+                                                  Image.asset(
+                                                      "Assets/Images/man.png")
+                                                  // Container(height: 200.h,
+                                                  // decoration: BoxDecoration(
+                                                  //   shape: BoxShape.circle,
+                                                  //   color: theme.whiteColor),
+                                                  // width: 200.h,)
                                                 ],
                                               ),
                                             ),
-                                          ],
-                                        ),
+                                          )
+                                        ],
                                       ),
                                     ),
-                                   
-
                                     Container(
-                                       width: Get.width,
+                                      width: Get.width,
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
                                       margin: EdgeInsets.all(20.h),
                                       decoration: BoxDecoration(
+                                          image: const DecorationImage(
+                                              fit: BoxFit.cover,
+                                              image: AssetImage(
+                                                "Assets/Images/back.jpg",
+                                              )),
                                           borderRadius:
                                               BorderRadius.circular(8.r),
                                           color: theme.whiteColor,
@@ -274,190 +299,167 @@ class _HomePageState extends State<HomePage> {
                                                 spreadRadius: 1.0,
                                                 blurRadius: 20.0)
                                           ]),
-                                          child: Column(
+                                      child: Stack(
+                                        children: [
+                                          Row(
                                             children: [
-                                              Image.asset("Assets/Images/p1.jpg",height: 350.h,),
+                                              Expanded(child: Container()),
+                                              SizedBox(
+                                                width: 30.w,
+                                              ),
+                                              Expanded(
+                                                flex: 2,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+                                                    Text(
+                                                      "HAPPY",
+                                                      style: TextStyle(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontSize: 70,
+                                                          fontFamily: "Bebas",
+                                                          height: 1.h,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10.h,
+                                                    ),
+                                                    Text(
+                                                      "BIRTHDAY",
+                                                      style: TextStyle(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontSize: 70,
+                                                          height: 1.h,
+                                                          fontFamily: "Bebas",
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
 
-                                              Text("Enfu-12100",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar/Ups
-Capacity:- 12V, 100AH
-Warranty:- 3Years ''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+
+                                                    IntrinsicWidth(
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "John Willam Son",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  "BebasReqular",
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontSize: 20,
+                                                              height: 1.h,
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 2.h,
+                                                          ),
+                                                          Container(
+                                                            height: 1.h,
+                                                            color: theme
+                                                                .primaryColor,
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+
+                                                    Text(
+                                                      "Marketing Lead",
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              "BebasReqular",
+                                                          color: theme.textColor
+                                                              .withOpacity(0.3),
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+
+                                                    SizedBox(
+                                                      height: 50.h,
+                                                    ),
+
+                                                    Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          width: 30.w,
+                                                        ),
+                                                        Expanded(
+                                                          child: Text(
+                                                            "THE WHOLE TEAM WISHES YOU THE HAPPIEST OF BIRTHDAYS AND A GREAT YEAR.",
+                                                            style: TextStyle(
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontSize: 20,
+                                                              fontFamily:
+                                                                  "BebasReqular",
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                    // Column(
+                                                    //   children: [
+
+                                                    //   ],
+                                                    // ),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 10.w,
+                                              )
                                             ],
                                           ),
-                                    ),
-                                     Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p2.jpg",height: 350.h,),
+                                          Positioned(
+                                            bottom: -50,
+                                            left: -50,
+                                            child: Container(
+                                              height: 330.h,
+                                              width: 330.h,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: theme.primaryColor,
+                                              ),
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                      // color: theme.whiteColor,
+                                                      // height: 300.h,
 
-                                              Text("Enfu-12200",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar/Ups
-Capacity:- 12V, 200AH
-Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
-                                    ),
-                                  
-                                    Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p3.jpg",height: 350.h,),
-
-                                              Text("Enfu-24100",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar/Ups
-Capacity:- 24V, 100AH
-Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
-                                    ),
-                                 
-                                    Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p1.jpg",height: 350.h,),
-
-                                              Text("Enfu-24200",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar/Ups
-Capacity:- 24V, 200AH
-Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
-                                    ),
-                                
-                                    Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p2.jpg",height: 350.h,),
-
-                                              Text("Enfu-48100",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar
-Capacity:- 48V, 100AH
-Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
-                                    ),
-                                 
-                                    Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p3.jpg",height: 350.h,),
-
-                                              Text("Enfu-48200",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar
-Capacity:- 48V, 200AH
-Warranty:- 3Years ''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
-                                    ),
-                               
-                                     Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p1.jpg",height: 350.h,),
-
-                                              Text("Enfu-48100",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar/Ups
-Capacity:- 51.2V, 100AH
-Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
+                                                      child: Image.asset(
+                                                          "Assets/Images/man.png"))
+                                                  // Container(height: 200.h,
+                                                  // decoration: BoxDecoration(
+                                                  //   shape: BoxShape.circle,
+                                                  //   color: theme.whiteColor),
+                                                  // width: 200.h,)
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                     Container(
-                                       width: Get.width,
+                                      width: Get.width,
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
                                       margin: EdgeInsets.all(20.h),
                                       decoration: BoxDecoration(
+                                          image: const DecorationImage(
+                                              fit: BoxFit.cover,
+                                              image: AssetImage(
+                                                "Assets/Images/back.jpg",
+                                              )),
                                           borderRadius:
                                               BorderRadius.circular(8.r),
                                           color: theme.whiteColor,
@@ -468,47 +470,157 @@ Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.
                                                 spreadRadius: 1.0,
                                                 blurRadius: 20.0)
                                           ]),
-                                          child: Column(
+                                      child: Stack(
+                                        children: [
+                                          Row(
                                             children: [
-                                              Image.asset("Assets/Images/p2.jpg",height: 350.h,),
+                                              Expanded(child: Container()),
+                                              SizedBox(
+                                                width: 30.w,
+                                              ),
+                                              Expanded(
+                                                flex: 2,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+                                                    Text(
+                                                      "HAPPY",
+                                                      style: TextStyle(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontSize: 70,
+                                                          fontFamily: "Bebas",
+                                                          height: 1.h,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 10.h,
+                                                    ),
+                                                    Text(
+                                                      "BIRTHDAY",
+                                                      style: TextStyle(
+                                                          color: theme
+                                                              .primaryColor,
+                                                          fontSize: 70,
+                                                          height: 1.h,
+                                                          fontFamily: "Bebas",
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
 
-                                              Text("Enfu-48200",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar
-Capacity:- 51.2V, 200AH
-Warranty:- 3Years ''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
+                                                    SizedBox(
+                                                      height: 20.h,
+                                                    ),
+
+                                                    IntrinsicWidth(
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "John Willam Son",
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  "BebasReqular",
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontSize: 20,
+                                                              height: 1.h,
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 2.h,
+                                                          ),
+                                                          Container(
+                                                            height: 1.h,
+                                                            color: theme
+                                                                .primaryColor,
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+
+                                                    Text(
+                                                      "Marketing Lead",
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              "BebasReqular",
+                                                          color: theme.textColor
+                                                              .withOpacity(0.3),
+                                                          fontSize: 15,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+
+                                                    SizedBox(
+                                                      height: 50.h,
+                                                    ),
+
+                                                    Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          width: 30.w,
+                                                        ),
+                                                        Expanded(
+                                                          child: Text(
+                                                            "THE WHOLE TEAM WISHES YOU THE HAPPIEST OF BIRTHDAYS AND A GREAT YEAR.",
+                                                            style: TextStyle(
+                                                              color: theme
+                                                                  .primaryColor,
+                                                              fontSize: 20,
+                                                              fontFamily:
+                                                                  "BebasReqular",
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                    // Column(
+                                                    //   children: [
+
+                                                    //   ],
+                                                    // ),
+                                                  ],
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 10.w,
+                                              )
                                             ],
                                           ),
-                                    ),
-                                    Container(
-                                       width: Get.width,
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      margin: EdgeInsets.all(20.h),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: theme.whiteColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: theme.textColor
-                                                    .withOpacity(0.3),
-                                                spreadRadius: 1.0,
-                                                blurRadius: 20.0)
-                                          ]),
-                                          child: Column(
-                                            children: [
-                                              Image.asset("Assets/Images/p3.jpg",height: 350.h,),
+                                          Positioned(
+                                            bottom: -50,
+                                            left: -50,
+                                            child: Container(
+                                              height: 330.h,
+                                              width: 330.h,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: theme.primaryColor,
+                                              ),
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                      // color: theme.whiteColor,
+                                                      // height: 300.h,
 
-                                              Text("Enfu-6025",style: fontUtils.h5(theme.secondaryColor),),
-                                                Text('''
-Application:- Solar/Ups
-Capacity:- 60V, 25AH
-Warranty:- 3Years''',style: fontUtils.description(theme.textColor.withOpacity(0.3)),)
-                                            ],
-                                          ),
+                                                      child: Image.asset(
+                                                          "Assets/Images/man.png"))
+                                                  // Container(height: 200.h,
+                                                  // decoration: BoxDecoration(
+                                                  //   shape: BoxShape.circle,
+                                                  //   color: theme.whiteColor),
+                                                  // width: 200.h,)
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                  
-                                 
                                   ]),
                             )),
                             Expanded(

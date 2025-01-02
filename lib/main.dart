@@ -12,7 +12,6 @@ import 'package:get_storage/get_storage.dart';
 
 import 'package:showcaseview/showcaseview.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -21,8 +20,6 @@ void main() async {
   //** Init Controllers
 
   Get.put(ThemeController());
-;
-
 
   runApp(const MyApp());
 }
@@ -33,49 +30,51 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShowCaseWidget(
-      builder : (context) => ScreenUtilInit(
+      builder: (context) => ScreenUtilInit(
           designSize: const Size(360, 690),
           minTextAdapt: true,
-          builder : (context, child) => GetMaterialApp(
-            
-            debugShowCheckedModeBanner: false,
-            title: appName.tr,
-            transitionDuration: const Duration(milliseconds: 700),
-            translations: WorldLanguage(),
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: const [
-              Locale('en', 'US'),
-              Locale('ar', 'AR'),
-            ],
-            locale: const Locale('en', 'US'),
-            initialRoute: splashRoute,
-            getPages: [
-              GetPage(name: splashRoute , page: () => const SplashScreen(), transition: Transition.fadeIn),
-            GetPage(name: homeRoute , page: () =>  HomePage(), transition: Transition.fadeIn),
-          
-            ],
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
-            // builder: (context, child) {
+          builder: (context, child) => GetMaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: appName.tr,
+                transitionDuration: const Duration(milliseconds: 700),
+                translations: WorldLanguage(),
+                localizationsDelegates: const [
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: const [
+                  Locale('en', 'US'),
+                  Locale('ar', 'AR'),
+                ],
+                locale: const Locale('en', 'US'),
+                initialRoute: splashRoute,
+                getPages: [
+                  GetPage(
+                      name: splashRoute,
+                      page: () => const SplashScreen(),
+                      transition: Transition.fadeIn),
+                  GetPage(
+                      name: homeRoute,
+                      page: () => HomePage(),
+                      transition: Transition.fadeIn),
+                ],
+                theme: ThemeData(
+                  primarySwatch: Colors.blue,
+                ),
+                // builder: (context, child) {
 
-
-            //   // child = EasyLoading.init()(context, child);
-            //   // return GetBuilder<LocaleController>(
-            //   //     id: "0", builder: (localeController) {
-            //   //   return Directionality(
-            //   //     textDirection: localeController.locale == english ? TextDirection
-            //   //         .ltr : TextDirection.rtl,
-            //   //     child: child!,
-            //   //   );
-            //   // });
-            // },
-          )
-      ),
+                //   // child = EasyLoading.init()(context, child);
+                //   // return GetBuilder<LocaleController>(
+                //   //     id: "0", builder: (localeController) {
+                //   //   return Directionality(
+                //   //     textDirection: localeController.locale == english ? TextDirection
+                //   //         .ltr : TextDirection.rtl,
+                //   //     child: child!,
+                //   //   );
+                //   // });
+                // },
+              )),
     );
   }
 }
